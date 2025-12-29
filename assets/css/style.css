@@ -1,0 +1,451 @@
+:root{
+  --text:#111;
+  --muted:#555;
+  --border:#e6e6e6;
+  --maxw: 980px;
+  --header-bg: #f2f2f2;   /* NEW */
+}
+
+*{ box-sizing:border-box; }
+body{
+  margin:0;
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  color:var(--text);
+  line-height:1.55;
+}
+
+.container{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.site-header{
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--border);
+  padding: 18px 0 12px;
+}
+
+.brand-title{
+  font-size: 34px;
+  font-weight: 680;
+  margin: 0;
+}
+.brand-title a{
+  color: var(--text);
+  text-decoration: none;
+}
+
+.brand-subtitle{
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.nav{
+  margin-top: 12px;
+  display:flex;
+  flex-wrap:wrap;
+  gap: 10px 14px;
+}
+
+.nav a{
+  color: var(--text);
+  text-decoration:none;
+  font-size: 14px;
+  padding: 6px 8px;
+  border-radius: 8px;
+}
+
+.nav a{
+  position: relative;
+}
+
+.nav a:hover{
+  background: #e8e8e8;
+}
+
+.nav a.active{
+  background: #e3e3e3;
+  font-weight: 600;
+  border-bottom: 2px solid #b5b5b5;
+}
+
+
+main{ padding: 22px 0 32px; }
+
+.content img{ max-width: 100%; height:auto; }
+.content h1{ margin-top: 0; }
+.content h2{ margin-top: 28px; }
+
+.site-footer{
+  border-top: 1px solid var(--border);
+  padding: 14px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+
+/* Home intro layout (photo left, text right) */
+.intro-grid{
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 26px;
+  align-items: start;
+  margin-top: 6px;
+}
+
+@media (max-width: 700px){
+  .intro-grid{ grid-template-columns: 1fr; }
+}
+
+.profile-photo{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 2px;         /* nearly square corners like Wix */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.intro-text p{
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 18px;            /* slightly larger like your Wix site */
+}
+
+.intro-text a{
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Make publication link blocks inline (same line as the entry text) */
+.pub-links{
+  display: inline !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.pub-links a{
+  display: inline !important;
+  margin-left: 10px;
+  white-space: nowrap;
+}
+
+/* Tighter indentation for publication lists only */
+.content ol {
+  padding-left: 1.4em;   /* default is ~2.5em */
+}
+
+.content li {
+  margin-bottom: 0.6em;  /* keeps entries readable */
+}
+
+
+.year-separator {
+  margin-top: 2.2rem;
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid #ccc;
+  font-size: 1.3rem;
+}
+
+.profile-links {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.8rem;
+}
+
+.profile-links img {
+  height: 22px;
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+}
+
+.profile-links img:hover {
+  opacity: 1;
+}
+
+
+.student-list li {
+  margin-bottom: 0.6rem;
+  line-height: 1.4;
+}
+
+.phd-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.phd-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.3rem;
+}
+
+.phd-photo {
+  width: 80px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  flex-shrink: 0;
+}
+
+.phd-info {
+  line-height: 1.45;
+}
+
+.student-list {
+  margin-left: 0;
+  padding-left: 1rem;   /* adjust: 0.8rem–1.2rem is usually ideal */
+}
+
+
+.student-list li::marker {
+  font-weight: 500;
+  color: #444;
+}
+
+
+/* =========================
+   EVENTS PAGE (scoped)
+   ========================= */
+.events-page .page-intro{
+  margin-top: .25rem;
+  margin-bottom: 1.25rem;
+  opacity: .85;
+}
+
+.events-page .events-list{
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.events-page .event{
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 12px;
+  padding: 1rem 1rem 1.1rem;
+  background: #fff;
+}
+
+.events-page .event-top{
+  margin-bottom: .75rem;
+}
+
+.events-page .event-date{
+  display: inline-block;
+  font-size: .95rem;
+  opacity: .75;
+  margin-bottom: .25rem;
+}
+
+.events-page .event-title{
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+
+.events-page .event-body{
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.events-page .event-media{
+  margin: 0;
+}
+
+.events-page .event-media img{
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+.events-page .event-text p{
+  margin-top: 0;
+  margin-bottom: .8rem;
+}
+
+.events-page .event-links{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.events-page .btn-link{
+  display: inline-block;
+  padding: .45rem .7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.15);
+  text-decoration: none;
+  font-size: .95rem;
+}
+
+.events-page .btn-link:hover{
+  border-color: rgba(0,0,0,.3);
+}
+
+/* Responsive */
+@media (max-width: 760px){
+  .events-page .event-body{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Wrapfigure-style layout for the featured article --- */
+.featured-article .wrap {
+  float: right;              /* default: right */
+  width: 320px;              /* adjust: 260–380px usually looks good */
+  margin: 0.2rem 0 1rem 1.25rem;
+}
+
+.featured-article .wrap.left {
+  float: left;
+  margin: 0.2rem 1.25rem 1rem 0;
+}
+
+.featured-article .wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;       /* optional */
+}
+
+/* Clear floats after a wrapped block so following content aligns normally */
+.featured-article .clearfix {
+  clear: both;
+}
+
+/* Mobile: disable wrapping and stack images */
+@media (max-width: 820px) {
+  .featured-article .wrap,
+  .featured-article .wrap.left {
+    float: none;
+    width: 100%;
+    margin: 0.75rem 0;
+  }
+}
+
+
+/* Two stacked images inside a wrapped figure */
+.featured-article .wrap .stacked {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;          /* space between the two images */
+}
+
+.featured-article .wrap .stacked img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Optional: ensure the caption stays under the images */
+.featured-article .wrap figcaption {
+  clear: both;
+}
+
+
+.featured-article .wrap .stacked{
+  display:flex;
+  flex-direction:column;
+  gap:0.5rem;
+}
+.featured-article .wrap .stacked img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+
+figure.wrap {
+  overflow: hidden;   /* forces figure to expand to include caption */
+}
+
+.content::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* =========================
+   MEDIA PAGE LAYOUT
+   ========================= */
+
+/* Container for all media entries */
+.media-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.75rem;
+}
+
+/* One media entry */
+.media-item {
+  width: 100%;
+}
+
+/* Row: video on the left, text on the right */
+.media-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* -------------------------
+   VIDEO COLUMN
+   ------------------------- */
+.media-video {
+  flex: 0 0 360px;        /* fixed, reasonable width */
+  max-width: 360px;
+  margin-top: 2rem;
+}
+
+.media-video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 6px;
+  display: block;
+}
+
+/* -------------------------
+   TEXT COLUMN
+   ------------------------- */
+.media-text {
+  flex: 1 1 auto;        /* take all remaining space */
+  min-width: 0;          /* CRITICAL: prevents text squeezing */
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.media-text h3 {
+  margin-top: 0;
+}
+
+.media-links {
+  margin-top: 0.75rem;
+}
+
+.media-links .btn-link {
+  margin-right: 0.75rem;
+}
+
+/* -------------------------
+   RESPONSIVE (MOBILE)
+   ------------------------- */
+@media (max-width: 800px) {
+  .media-row {
+    flex-direction: column;
+  }
+
+  .media-video {
+    max-width: 100%;
+    margin-top: 1rem;
+
+  }
+}
+

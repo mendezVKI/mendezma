@@ -467,3 +467,45 @@ figure.wrap {
     background: #f4f4f4;/* optional: looks nice if aspect ratio differs */
   }
 }
+
+
+/* Wrapfigure-style intro (logo on the right, text flows around it) */
+.ml4f-intro::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.ml4f-logo {
+  float: right;
+  width: 150px;          /* adjust if needed */
+  margin: -1.2rem 0 1rem 2rem;  /* space between text and logo */
+}
+
+.ml4f-logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* On mobile: stop wrapping and center the logo */
+@media (max-width: 800px) {
+  .ml4f-logo {
+    float: none;
+    width: min(260px, 70%);
+    margin: 0 auto 1rem;
+  }
+}
+
+/* Reset typography inside ML4F intro */
+.ml4f-intro p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.ml4f-intro strong {
+  font-weight: 600;
+}
+

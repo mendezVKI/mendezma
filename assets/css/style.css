@@ -449,3 +449,21 @@ figure.wrap {
   }
 }
 
+/* --- Mobile fix: prevent photo cropping on small screens --- */
+@media (max-width: 700px) {
+
+  /* Optional: a bit more breathing room */
+  .phd-item {
+    gap: 0.9rem;
+    align-items: flex-start; /* keeps top aligned with text */
+  }
+
+  /* Stop forcing a fixed crop box */
+  .phd-photo {
+    width: 96px;        /* slightly larger on mobile (optional) */
+    height: auto;       /* key: remove fixed height */
+    max-height: 140px;  /* safety cap (optional) */
+    object-fit: contain;/* key: show full image */
+    background: #f4f4f4;/* optional: looks nice if aspect ratio differs */
+  }
+}

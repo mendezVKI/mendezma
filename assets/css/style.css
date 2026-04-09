@@ -509,3 +509,11 @@ figure.wrap {
   font-weight: 600;
 }
 
+.update-date {
+    text-align: right;
+    font-size: 0.8rem;
+    color: #888;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    margin-top: 40px;
+}

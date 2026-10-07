@@ -99,6 +99,31 @@ main{ padding: 22px 0 32px; }
   .intro-grid{ grid-template-columns: 1fr; }
 }
 
+/* Home intro, wrapfigure style: photo floats left, text wraps around and below it */
+.intro-wrap{
+  margin-top: 6px;
+}
+
+.intro-wrap::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.profile-photo.profile-photo-float{
+  float: left;
+  width: 300px;
+  margin: 4px 26px 12px 0;
+}
+
+@media (max-width: 700px){
+  .profile-photo.profile-photo-float{
+    float: none;
+    width: 100%;
+    margin: 0 0 16px;
+  }
+}
+
 .profile-photo{
   width: 100%;
   height: auto;
@@ -507,6 +532,56 @@ figure.wrap {
 
 .ml4f-intro strong {
   font-weight: 600;
+}
+
+/* Affiliation strip (home page): three small logos with captions */
+.affiliations {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 0 0 1.6rem;
+  padding: 0.9rem 0 1rem;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.affiliation {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.affiliation-logo {
+  height: 72px;
+  display: flex;
+  align-items: center;
+}
+
+.affiliation-logo a {
+  display: block;
+  height: 100%;
+}
+
+.affiliation-logo img {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  display: block;
+}
+
+.affiliation-text {
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: var(--muted);
+  margin: 0;
+  text-wrap: balance;
+}
+
+@media (max-width: 700px) {
+  .affiliations {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 
 .update-date {

@@ -592,3 +592,12 @@ figure.wrap {
     padding-top: 10px;
     margin-top: 40px;
 }
+
+/* Note introducing archival content (e.g. the 2019 VKI-AA article on the CV/Bio page) */
+.archive-note{
+  background: var(--header-bg);
+  border-left: 4px solid #9a9a9a;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  color: var(--muted);
+}
